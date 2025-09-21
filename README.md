@@ -62,8 +62,8 @@ The application follows a sophisticated pipeline to enable intelligent document 
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/GURPREETKAURJETHRA/Multi-PDFs_ChatApp_AI-Agent.git
-   cd Multi-PDFs_ChatApp_AI-Agent
+   git clone https://github.com/nikhilesh481/PDF-Chatter.git
+   cd PDF-Chatter
    ```
 
 2. **Install Dependencies**
