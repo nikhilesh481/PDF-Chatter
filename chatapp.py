@@ -106,7 +106,7 @@ def main():
     st.markdown(
         """
         <div style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #0E1117; padding: 15px; text-align: center;">
-            © <a href="https://github.com/gurpreetkaurjethra" target="_blank">Gurpreet Kaur Jethra</a> | Made with ❤️
+            © <a href="https://github.com/gurpreetkaurjethra" target="_blank">Nikhilesh Chowdary</a> | Made with ❤️
         </div>
         """,
         unsafe_allow_html=True

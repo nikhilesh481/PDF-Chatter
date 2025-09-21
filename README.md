@@ -1,110 +1,158 @@
-# Multi-PDF-s 📚ChatApp AI Agent 🤖
+# PDF Chatter
 
-Meet MultiPDF Chat AI App! 🚀 Chat seamlessly with Multiple PDFs using Langchain, Google Gemini Pro &amp; FAISS Vector DB with Seamless Streamlit Deployment. Get instant, Accurate responses from Awesome Google Gemini OpenSource language Model. 📚💬 Transform your PDF experience now! 🔥✨
+A powerful AI-powered application that enables intelligent conversations with multiple PDF documents using advanced language models and vector search technology.
 
-## 📝 Description
-The Multi-PDF's Chat Agent is a Streamlit-based web application designed to facilitate interactive conversations with a chatbot. The app allows users to upload multiple PDF documents, extract text information from them, and train a chatbot using this extracted content. Users can then engage in real-time conversations with the chatbot.
+## Overview
 
-## 📢Demo App with Streamlit Cloud (Visualize only)
+PDF Chatter transforms your static PDF documents into an interactive knowledge base. Simply upload multiple PDF files, and the application will process them to create an intelligent chatbot that can answer questions based on the content of your documents. Built with Streamlit, LangChain, and Google's Gemini AI, this tool makes document analysis and information retrieval effortless.
 
-[Launch App On Streamlit](https://multi-pdfschatappai-agent.streamlit.app/)
+## Key Features
 
-## 💻 Demo:
-![Demo 1: Chatbot Output](img/LLMframework.jpg)
+### Intelligent Document Processing
+- **Multi-PDF Support**: Upload and process multiple PDF documents simultaneously
+- **Smart Text Chunking**: Advanced sliding window technique that adapts to document complexity
+- **Vector Embeddings**: Converts text into searchable vector representations using Google's Gemini AI
 
-## 🎯 How It Works:
-------------
+### Advanced Query Capabilities
+- **Multi-Document Search**: Ask questions that span across multiple documents
+- **Contextual Understanding**: Maintains conversation context for follow-up questions
+- **Semantic Search**: Finds relevant information even when using different wording than the source text
 
-![MultiPDF Chat App Diagram](img/Architecture.jpg)
+### Flexible AI Integration
+- **Multiple LLM Support**: Compatible with Google Gemini Pro, OpenAI GPT, Anthropic Claude, and Llama2
+- **Real-time Processing**: Get instant responses to your queries
+- **Conversational Interface**: Natural language interaction with your documents
 
-The application follows these steps to provide responses to your questions:
+## How It Works
 
-1. **PDF Loading** : The app reads multiple PDF documents and extracts their text content.
+The application follows a sophisticated pipeline to enable intelligent document interaction:
 
-2. **Text Chunking** : The extracted text is divided into smaller chunks that can be processed effectively.
+1. **Document Ingestion**: PDFs are uploaded and their text content is extracted
+2. **Text Segmentation**: Content is intelligently split into optimal chunks for processing
+3. **Vectorization**: Text chunks are converted to high-dimensional vectors using AI embeddings
+4. **Indexing**: Vectors are stored in a FAISS database for fast similarity search
+5. **Query Processing**: User questions are vectorized and matched against document chunks
+6. **Response Generation**: Relevant chunks are fed to the language model to generate accurate answers
 
-3. **Language Model** : The application utilizes a language model to generate vector representations (embeddings) of the text chunks.
+## Technical Architecture
 
-4. **Similarity Matching** : When you ask a question, the app compares it with the text chunks and identifies the most semantically similar ones.
+### Core Technologies
+- **Streamlit**: Web application framework for the user interface
+- **LangChain**: Orchestration framework for AI applications
+- **Google Gemini AI**: Large language model for text understanding and generation
+- **FAISS**: Facebook's library for efficient similarity search and clustering
+- **PyPDF2**: PDF text extraction and manipulation
 
-5. **Response Generation** : The selected chunks are passed to the language model, which generates a response based on the relevant content of the PDFs.
+### Dependencies
+- **streamlit**: Interactive web application framework
+- **google-generativeai**: Google's generative AI SDK
+- **langchain**: AI application development framework
+- **langchain_google_genai**: LangChain integration for Google AI
+- **faiss-cpu**: Vector similarity search library
+- **PyPDF2**: PDF processing library
+- **python-dotenv**: Environment variable management
 
-![Demo 2: Chatbot Output](img/LLMApp.jpg)
+## Installation Guide
 
---- 
-## 🎯 Key Features
+### Prerequisites
+- Python 3.8 or higher
+- Google AI API key (obtain from Google AI Studio)
 
-- **Adaptive Chunking**: Our Sliding Window Chunking technique dynamically adjusts window size and position for RAG, balancing fine-grained and coarse-grained data access based on data complexity and context.
+### Setup Instructions
 
-- **Multi-Document Conversational QA**: Supports simple and multi-hop queries across multiple documents simultaneously, breaking the single-document limitation.
-
-- **File Compatibility**: Supports both PDF and TXT file formats.
-
-- **LLM Model Compatibility**: Supports Google Gemini Pro, OpenAI GPT 3, Anthropic Claude, Llama2 and other open-source LLMs.
-
-
-![Demo 3: Chatbot Output](img/LLMAgents.jpg)
-
-
-## 🌟Requirements
-
-- **Streamlit** : A Python library for building web applications with interactive elements.
-- **google-generativeai** : It is a package that provides generative AI capabilities for chatbots and virtual agents. It can be used in a variety of applications such as content generation, dialogue agents, summarization and classification systems and more.
-- **python-dotenv** : A library for loading environment variables from a `.env` file. This is commonly used to store configuration settings, API keys, and other sensitive information outside of your code.
-- **langchain** : A custom library for natural language processing tasks, including conversational retrieval, text splitting, embeddings, vector stores, chat models, and memory.
-- **PyPDF2** : PyPDF2 is a library for reading and manipulating PDF files in Python. It can be used to merge, split, and modify PDFs. In the context of a multipdf chatbot, PyPDF2 could be used to handle the manipulation and generation of PDF files based on user input or responses.
-- **faiss-cpu** : FAISS (Facebook AI Similarity Search) is a library developed by Facebook for efficient similarity search, Machine Learning Embeddings,Information Retrieval, content-based filtering and clustering of dense vectors.
-- **langchain_google_genai** : It is a package that provides an integration between LangChain and Google’s generative-ai SDK. It contains classes that extend the Embeddings class and provide methods for generating embeddings. The package can be used in a multipdf chatbot application to extract textual data from PDF documents and generate Accurate responses to user queries.
-
-![Demo 4: Chatbot Output](img/CALMOutput.jpg)
----
-
-## ▶️Installation
-
-Clone the repository:
-
-`git clone https://github.com/GURPREETKAURJETHRA/Multi-PDFs_ChatApp_AI-Agent.git`
-
-Install the required Python packages:
-
-`pip install -r requirements.txt`
-
-Set up your Google API key from `https://makersuite.google.com/app/apikey` by creating a .env file in the root directory of the project with the following contents:
-
-`GOOGLE_API_KEY =<your-api-key-here>`
-
-Run the Streamlit app:
-
-`streamlit run app.py`
-
----
-## 💡Usage
-
-To use the Multi-PDF-s 📚ChatApp AI Agent 🤖, U can have glimpse of look by clicking on this link : [Launch App On Streamlit](https://multi-pdfschatappai-agent.streamlit.app/). To run app, fork app and follow the below steps to start using it. Use the sidebar to upload PDF files and train the chatbot. Once trained, you can have conversations with the chatbot by entering questions in the text input field.
-
-In case You want to run & implement project on your system then follow these steps:
-
-1. Ensure that you have installed the required dependencies and added the **Google API key to the `.env` file** (MUST).
-2. Run the `app.py` file using the Streamlit CLI. Execute the following command:
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/GURPREETKAURJETHRA/Multi-PDFs_ChatApp_AI-Agent.git
+   cd Multi-PDFs_ChatApp_AI-Agent
    ```
-   streamlit run app.py
+
+2. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
    ```
-3. The application will launch in your default web browser, displaying the user interface.
-4. Upload multiple PDF documents into the app by following the provided instructions at sidebar. On the sidebar, you'll find an option to upload PDF documents. Click on the "Upload your documents here and click on Process" button and select one or more PDF files. 
-5. Don't forget to click on Submit & Process Button.
-6. Ask questions in natural language about the loaded PDFs using the chat interface.
-7. Chatting with the Documents: After uploading and processing the PDF documents, you can ask questions by typing them in the text input field. Press Enter or click the "Ask" button to submit your question.
 
-The application will use conversational AI to provide responses based on the content of the uploaded documents. The responses will be displayed in the chat interface.
+3. **Configure API Key**
+   Create a `.env` file in the project root:
+   ```
+   GOOGLE_API_KEY=your_api_key_here
+   ```
+
+4. **Launch the Application**
+   ```bash
+   streamlit run chatapp.py
+   ```
+
+## Usage Instructions
+
+### Getting Started
+1. **Launch the App**: Run the Streamlit application using the command above
+2. **Upload Documents**: Use the sidebar to upload one or more PDF files
+3. **Process Documents**: Click "Submit & Process" to analyze your documents
+4. **Start Chatting**: Type questions in the chat interface to interact with your documents
+
+### Best Practices
+- **Upload Related Documents**: For best results, upload documents that are related to each other
+- **Ask Specific Questions**: More specific questions yield better, more focused answers
+- **Use Follow-up Questions**: The system maintains context, so you can ask follow-up questions
+- **Try Different Phrasings**: If you don't get the expected answer, try rephrasing your question
+
+### Example Queries
+- "What are the main findings in the research papers?"
+- "Compare the methodologies used in document A and document B"
+- "Summarize the key points from the uploaded documents"
+- "What are the recommendations mentioned in the reports?"
+
+## Project Structure
+
+```
+PDF_Chatter/
+├── chatapp.py              # Main Streamlit application
+├── requirements.txt        # Python dependencies
+├── .env                    # Environment variables (create this)
+├── docs/                   # Sample PDF documents
+├── img/                    # Application screenshots
+├── README.md              # This file
+└── LICENSE                # MIT License
+```
+
+## Configuration
+
+### Environment Variables
+- `GOOGLE_API_KEY`: Required for Google Gemini AI integration
+
+### Customization Options
+- Modify chunk size and overlap in the text splitting configuration
+- Adjust similarity search parameters for different use cases
+- Switch between different language models as needed
+
+## Troubleshooting
+
+### Common Issues
+- **API Key Error**: Ensure your Google API key is correctly set in the `.env` file
+- **Memory Issues**: For large documents, consider reducing chunk size
+- **Slow Processing**: Large PDFs may take time to process; this is normal
+
+### Performance Tips
+- Use smaller PDF files for faster processing
+- Limit the number of documents uploaded simultaneously
+- Clear the chat history if the application becomes slow
+
+## Contributing
+
+We welcome contributions to improve PDF Chatter! Please feel free to:
+- Report bugs and issues
+- Suggest new features
+- Submit pull requests
+- Improve documentation
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Support
+
+If you find this project helpful, please consider giving it a star! For questions or support, please open an issue in the repository.
 
 ---
-## ©️ License 🪪 
 
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-#### **If you like this LLM Project do drop ⭐ to this repo**
-#### Follow me on [![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/gurpreetkaurjethra/) &nbsp; [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/GURPREETKAURJETHRA/)
-
----
+**Transform your PDF documents into an intelligent knowledge base with PDF Chatter!**
